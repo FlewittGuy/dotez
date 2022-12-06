@@ -27,7 +27,7 @@ def get_item(item: str):  # Retrieves a specified object from data
     try:
         item = data[item]
     except KeyError:
-        raise KeyError("Key doesn't exist in .ez file")  # Look into .ez file and check if variable exists there
+        raise KeyError("Couldn't find key in .ez file")  # Alternatively, you may have forgotten to use "load_ez()"
 
     # Figure out what type of variable to return
     if item["Type"] == Datatype.STRING: return str(item["Value"])
